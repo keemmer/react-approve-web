@@ -50,7 +50,7 @@
   padding: 0.8rem 1rem;
 }
 
-.ant-card-body > p {
+.ant-card-body>p {
   margin-bottom: 4px;
 }
 
@@ -62,8 +62,8 @@
 
 .tag-user-status-green {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.5rem;
+  font-weight: bold;
   padding: 0px 6px;
   color: green;
   border: 2px solid green;
@@ -72,8 +72,8 @@
 
 .tag-user-status-yellow {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.5rem;
+  font-weight: bold;
   padding: 0px 6px;
   color: #ffb700;
   border: 2px solid #ffb700;
@@ -82,10 +82,46 @@
 
 .tag-user-status-red {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.5rem;
+  font-weight: bold;
   padding: 0px 6px;
   color: red;
   border: 2px solid red;
   border-radius: 0.8rem;
 }
+.opt-box{
+  color: red;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+.opt-username {
+  color: #555;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+.welcome-message {
+  color: #555;
+  padding-top: 0.4rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.otp-message {
+  color: #555;
+  padding: 0.4rem;
+  font-size: 2.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.otp-expire-message {
+  color: #555;
+  font-size: 1.2rem;
+  text-align: right;
+  font-weight: 500;
+}
+

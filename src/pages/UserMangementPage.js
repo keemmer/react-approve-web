@@ -69,7 +69,6 @@ const SignUpPage = () => {
       address: data.address,
       role: data.role,
       OTP: data.OTP
-
     })
   };
   const handleEditOk = () => {
@@ -232,7 +231,7 @@ const SignUpPage = () => {
         <Breadcrumb.Item>Sign up</Breadcrumb.Item>
       </Breadcrumb>
       <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
-        <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '2rem' }}>
+        <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '1.2rem' }}>
           Users Register
         </Typography.Title>
         <Row justify="end">

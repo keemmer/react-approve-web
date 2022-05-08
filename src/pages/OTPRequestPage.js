@@ -6,7 +6,8 @@ import {
   Row,
   Col,
   Table,
-  Typography
+  Typography,
+  notification
 } from 'antd';
 
 import {
@@ -24,6 +25,7 @@ const dataSource = [
     timeRequest: '1990-05-05 10:10:00',
     timeAction: '1990-05-05 10:11:00',
     remark: '-',
+    otp: '123456',
     status: ''
   },
   {
@@ -31,6 +33,7 @@ const dataSource = [
     username: 'Mike',
     timeRequest: '1990-05-05 10:10:00',
     timeAction: '1990-05-05 10:11:00',
+    otp: '123456',
     remark: '-',
     status: 'Deline'
   },
@@ -39,6 +42,7 @@ const dataSource = [
     username: 'Mike',
     timeRequest: '1990-05-05 10:10:00',
     timeAction: '1990-05-05 10:11:00',
+    otp: '123456',
     remark: '-',
     status: 'Approve'
   },
@@ -47,6 +51,7 @@ const dataSource = [
     username: 'Mike',
     timeRequest: '1990-05-05 10:10:00',
     timeAction: '1990-05-05 10:11:00',
+    otp: '123456',
     remark: '-',
     status: 'Deline'
   },
@@ -55,10 +60,11 @@ const dataSource = [
     username: 'Mike',
     timeRequest: '1990-05-05 10:10:00',
     timeAction: '1990-05-05 10:11:00',
+    otp: '123456',
     remark: '-',
     status: 'Approve'
   },
- 
+
 
 ];
 
@@ -84,6 +90,11 @@ const columns = [
     key: 'timeAction',
   },
   {
+    title: 'otp',
+    dataIndex: 'otp',
+    key: 'otp',
+  },
+  {
     title: 'remark',
     dataIndex: 'remark',
     key: 'remark',
@@ -100,6 +111,13 @@ const columns = [
 
 
 const OTPRequestPage = () => {
+  const openNotificationWithIcon = type => {
+    notification[type]({
+      message: 'OTP Request',
+      description:
+        `OTP code : ${123456} expire in 5 minutes Ref.xxx`,
+    });
+  };
   return (
     <div>
       <Breadcrumb style={{ margin: '16px 0' }}>
@@ -111,9 +129,14 @@ const OTPRequestPage = () => {
           OTP Request
         </Typography.Title>
 
-        <Row justify="space-between" align="middle" style={{ padding: '0.6rem'}} >
+        <Row justify="space-between" align="middle" style={{ padding: '0.6rem' }} >
           <Col>
-            <Button shape="round" size="large" icon={<HolderOutlined />}   >
+            <Button
+              shape="round"
+              size="large"
+              icon={<HolderOutlined />}
+              onClick={() => openNotificationWithIcon('success')}
+            >
               Request OTP
             </Button>
           </Col>
@@ -122,11 +145,7 @@ const OTPRequestPage = () => {
           </Col>
         </Row>
 
-        <Table dataSource={dataSource} columns={columns}  rowKey="id" />
-
-
-
-
+        <Table dataSource={dataSource} columns={columns} rowKey="id" />
 
       </div>
     </div>

@@ -9,7 +9,6 @@ import {
   Modal,
   Input,
   DatePicker,
-  Switch,
 } from 'antd';
 import Button from "antd-button-color";
 import {
@@ -135,7 +134,7 @@ const ApprovePage = () => {
         <Row gutter={[16, 16]}>
           {dataSource.map((user) => (
             // eslint-disable-next-line react/no-array-index-key
-            <Col span={6} key={user.id} >
+            <Col sm={12} md={6} key={user.id} >
               <Card title={(
                 <>
                   <div className="cart-title-avatar-name">
@@ -161,7 +160,7 @@ const ApprovePage = () => {
                 <Row justify="space-between" style={{ marginTop: '18px' }}>
                   <Col >
                     <Button htmlType="button" ghost type="danger" size="small" shape="round" icon={<CloseOutlined />} >
-                      Deline
+                      Decline
                     </Button>
                   </Col>
                   <Col >
@@ -249,19 +248,7 @@ const ApprovePage = () => {
             >
               <Input disabled />
             </Form.Item>
-            <Form.Item
-              label="OTP"
-              name="OTP"
-              valuePropName="checked"
-              style={{ margin: '6px' }}
-            >
-              <Switch
-                checkedChildren={<CheckOutlined />}
-                unCheckedChildren={<CloseOutlined />}
-                disabled
-              />
-            </Form.Item>
-
+           
           </Form>
         </Modal>
       </div>

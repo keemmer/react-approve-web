@@ -11,7 +11,6 @@ import {
   Input,
   Radio,
   DatePicker,
-  Switch,
   Upload,
 } from 'antd';
 import {
@@ -304,19 +303,6 @@ const HistoryPage = () => {
               <Input.TextArea showCount maxLength={200} placeholder="Please input" />
             </Form.Item>
 
-            <Form.Item
-              label="OTP"
-              name="OTP"
-              valuePropName="checked"
-              rules={[{
-                required: true,
-                message: 'Please input your',
-              },]}>
-              <Switch
-                checkedChildren={<CheckOutlined />}
-                unCheckedChildren={<CloseOutlined />}
-              />
-            </Form.Item>
             <Form.Item
               name="imageUpload"
               label="image"

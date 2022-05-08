@@ -22,8 +22,7 @@ function App() {
     <Router>
       <div>
 
-        {login ? (
-     
+        {login ? (    
           <Routes>
             <Route path="/" exact element={<LoginPage />} />
           </Routes>

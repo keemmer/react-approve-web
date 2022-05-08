@@ -51,7 +51,7 @@ const VisitorPage = () => {
         <Breadcrumb.Item>Visitor</Breadcrumb.Item>
       </Breadcrumb>
       <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
-        <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '5%' }}>Request Permissions Form</Typography.Title>
+        <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '1.2rem' }}>Request Permissions Form</Typography.Title>
         <Form
           {...formItemLayout}
           autoComplete="off"
