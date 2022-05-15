@@ -25,7 +25,7 @@ const SettingPage = () => {
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Setting</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
+      <div className="site-layout-background" style={{ padding: 24, minHeight: 920 }}>
         {/* <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '2rem' }}>Setting</Typography.Title> */}
 
         <Card title="Line Group" style={{ width: '100%', marginBottom: '1rem' }}>

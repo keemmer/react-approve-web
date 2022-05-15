@@ -141,13 +141,13 @@ const HistoryPage = () => {
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Transection</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
+      <div className="site-layout-background" style={{ padding: 24, minHeight: 920 }}>
         {/* {JSON.stringify(dataSource)} */}
         <Row gutter={[16, 16]}>
           {dataSource.map((user) => (
             // eslint-disable-next-line react/no-array-index-key
-            <Col span={6} key={user.id} >
-              <Card title={(
+            <Col xs={24} sm={12} md={8} lg={6}   key={user.id} >
+              <Card style={{ borderRadius: '1rem'}} title={(
                 <>
                   <div className="cart-title-avatar-name">
                     <div>
@@ -209,7 +209,7 @@ const HistoryPage = () => {
                 <p>{`${user.address}`}</p>
                 <Row >
                   <Col flex="auto"></Col>
-                  <Col flex="none">
+                  <Col flex="none" >
                     <Button htmlType="button" icon={<EditOutlined />} onClick={() => { showEditModal(user) }} >
                       Edit
                     </Button>

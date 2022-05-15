@@ -24,7 +24,7 @@ import {
   DeleteOutlined,
   CheckOutlined,
   CloseOutlined,
-  
+
 } from '@ant-design/icons'
 
 const formItemLayout = {
@@ -230,7 +230,7 @@ const SignUpPage = () => {
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Sign up</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
+      <div className="site-layout-background" style={{ padding: 24, minHeight: 920 }}>
         <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '1.2rem' }}>
           Users Register
         </Typography.Title>
@@ -261,9 +261,9 @@ const SignUpPage = () => {
                     name="firstname"
                     rules={[{
                       required: true,
-                      message: 'Please input your firstname',
+                      message: 'Please input firstname',
                     },]}>
-                    <Input placeholder="Please input firstname" />
+                    <Input placeholder="firstname" />
                   </Form.Item>
                 </Col>
                 <Col sm={{ span: 11, offset: 2 }}>
@@ -271,9 +271,9 @@ const SignUpPage = () => {
                     name="lastname"
                     rules={[{
                       required: true,
-                      message: 'Please input your lastname',
+                      message: 'Please input lastname',
                     },]}>
-                    <Input placeholder="Please input lastname" />
+                    <Input placeholder="lastname" />
                   </Form.Item>
                 </Col>
               </Row>
@@ -283,16 +283,16 @@ const SignUpPage = () => {
               name="Username"
               rules={[{
                 required: true,
-                message: 'Please input your username',
+                message: 'Please input username',
               },]}>
-              <Input placeholder="Please input username" />
+              <Input placeholder="username" />
             </Form.Item>
             <Form.Item
               label="Gender"
               name="radio-group"
               rules={[{
                 required: true,
-                message: 'Please input your',
+                message: 'Please input gender',
               },]}>
               <Radio.Group>
                 <Radio.Button value="M">Male</Radio.Button>
@@ -305,7 +305,7 @@ const SignUpPage = () => {
               rules={[{
                 type: 'object',
                 required: true,
-                message: 'Please select time!',
+                message: 'Please select date of birth',
               }]}>
               <DatePicker />
             </Form.Item>
@@ -314,16 +314,16 @@ const SignUpPage = () => {
               name="address"
               rules={[{
                 required: true,
-                message: 'Please input your',
+                message: 'Please input address',
               },]}>
-              <Input.TextArea showCount maxLength={200} placeholder="Please input" />
+              <Input.TextArea showCount maxLength={200} autoSize={{ minRows: 3, maxRows: 6 }} placeholder="address" />
             </Form.Item>
             <Form.Item
               label="Role"
               name="radio-group"
               rules={[{
                 required: true,
-                message: 'Please input your',
+                message: 'Please select role user',
               },]}>
               <Radio.Group>
                 <Radio.Button value="MEMBER">Member</Radio.Button>
@@ -335,10 +335,7 @@ const SignUpPage = () => {
               label="OTP"
               name="OTP"
               valuePropName="checked"
-              rules={[{
-                required: true,
-                message: 'Please input your',
-              },]}>
+            >
               <Switch
                 checkedChildren={<CheckOutlined />}
                 unCheckedChildren={<CloseOutlined />}
@@ -355,11 +352,11 @@ const SignUpPage = () => {
                 <Button icon={<UploadOutlined />}>Click to upload image</Button>
               </Upload>
             </Form.Item>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            {/* <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button type="primary" htmlType="submit" >
                 Add
               </Button>
-            </Form.Item>
+            </Form.Item> */}
           </Form>
         </Modal>
 
@@ -385,10 +382,10 @@ const SignUpPage = () => {
                     name="firstname"
                     rules={[{
                       required: true,
-                      message: 'Please input your firstname',
+                      message: 'Please input firstname',
                     },]}>
 
-                    <Input placeholder="Please input firstname" />
+                    <Input placeholder="firstname" />
                   </Form.Item>
                 </Col>
                 <Col sm={{ span: 11, offset: 2 }}>
@@ -396,9 +393,9 @@ const SignUpPage = () => {
                     name="lastname"
                     rules={[{
                       required: true,
-                      message: 'Please input your lastname',
+                      message: 'Please input lastname',
                     },]}>
-                    <Input placeholder="Please input lastname" />
+                    <Input placeholder="lastname" />
                   </Form.Item>
                 </Col>
               </Row>
@@ -408,16 +405,16 @@ const SignUpPage = () => {
               name="username"
               rules={[{
                 required: true,
-                message: 'Please input your username',
+                message: 'Please input username',
               },]}>
-              <Input placeholder="Please input" />
+              <Input placeholder="username" />
             </Form.Item>
             <Form.Item
               label="Gender"
               name="gender"
               rules={[{
                 required: true,
-                message: 'Please input your',
+                message: 'Please input gender',
               },]}>
               <Radio.Group>
                 <Radio.Button value="M">Male</Radio.Button>
@@ -430,7 +427,7 @@ const SignUpPage = () => {
               rules={[{
                 type: 'object',
                 required: true,
-                message: 'Please select time!',
+                message: 'Please select date of birth',
               }]}>
               <DatePicker format='YYYY-MM-DD' />
             </Form.Item>
@@ -439,16 +436,16 @@ const SignUpPage = () => {
               name="address"
               rules={[{
                 required: true,
-                message: 'Please input your',
+                message: 'Please input address',
               },]}>
-              <Input.TextArea showCount maxLength={200} placeholder="Please input" />
+              <Input.TextArea showCount maxLength={200} autoSize={{ minRows: 3, maxRows: 6 }} placeholder="address" />
             </Form.Item>
             <Form.Item
               label="Role"
               name="role"
               rules={[{
                 required: true,
-                message: 'Please input your',
+                message: 'Please input gender',
               },]}>
               <Radio.Group>
                 <Radio.Button value="MEMBER">Member</Radio.Button>
@@ -460,10 +457,7 @@ const SignUpPage = () => {
               label="OTP"
               name="OTP"
               valuePropName="checked"
-              rules={[{
-                required: true,
-                message: 'Please input your',
-              },]}>
+            >
               <Switch
                 checkedChildren={<CheckOutlined />}
                 unCheckedChildren={<CloseOutlined />}
@@ -480,11 +474,11 @@ const SignUpPage = () => {
                 <Button icon={<UploadOutlined />}>Click to upload image</Button>
               </Upload>
             </Form.Item>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            {/* <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button type="primary" htmlType="submit" >
                 Edit
               </Button>
-            </Form.Item>
+            </Form.Item> */}
           </Form>
         </Modal>
       </div>

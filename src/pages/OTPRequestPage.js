@@ -123,7 +123,7 @@ const OTPRequestPage = () => {
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Visitor</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
+      <div className="site-layout-background" style={{ padding: 24, minHeight: 920 }}>
 
         <Typography.Title level={3} strong style={{ textAlign: 'center', margin: '1.2rem' }}>
           OTP Request

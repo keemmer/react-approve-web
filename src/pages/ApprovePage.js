@@ -130,12 +130,12 @@ const ApprovePage = () => {
       <Breadcrumb style={{ margin: '16px 0' }}>
         <Breadcrumb.Item>Visitor</Breadcrumb.Item>
       </Breadcrumb>
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
+      <div className="site-layout-background" style={{ padding: 24, minHeight: 920 }}>
         <Row gutter={[16, 16]}>
           {dataSource.map((user) => (
             // eslint-disable-next-line react/no-array-index-key
-            <Col sm={12} md={6} key={user.id} >
-              <Card title={(
+            <Col xs={24} sm={12} md={8} lg={6} key={user.id} >
+              <Card style={{ borderRadius: '1rem'}} title={(
                 <>
                   <div className="cart-title-avatar-name">
                     <div>

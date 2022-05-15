@@ -19,7 +19,7 @@ const OPTPage = () => {
             <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>Setting</Breadcrumb.Item>
             </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 520 }}>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 920 }}>
 
                 <Row justify="center" align="middle">
                     <Col md={12} >

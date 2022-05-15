@@ -36,7 +36,7 @@ function App() {
             }}>
               <Navbar />
             </Header>
-            <Content className="site-layout" style={{ padding: '0 10%', marginTop: 64 }}>
+            <Content className="site-layout" style={{ padding: '0 2rem', marginTop: 64 }}>
               <Routes>
                 <Route path="/" exact element={<HomePage />} />
                 <Route path="/visitor" element={<VisitorPage />} />
