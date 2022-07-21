@@ -19,7 +19,7 @@ const login = false;
 function App() {
 
   return (
-    <Router>
+    <Router basename="/">
       <div>
 
         {login ? (    

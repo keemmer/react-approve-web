@@ -11,9 +11,10 @@ import {
   Col,
   Card,
   Typography,
-  Descriptions
+  Select,
 } from 'antd';
 
+import moment from 'moment';
 import { UploadOutlined } from '@ant-design/icons'
 
 const formItemLayout = {
@@ -29,6 +30,47 @@ const normFile = (e) => {
 
   return e && e.fileList;
 };
+
+const { RangePicker } = DatePicker;
+const range = (start, end) => {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}; // eslint-disable-next-line arrow-body-style
+const disabledRangeTime = (_, type) => {
+  if (type === 'start') {
+    return {
+      disabledHours: () => [0,1,2,3,4,5,6,7,19,20,21,22,23],
+      disabledMinutes: () => {
+        range(30, 60)
+      },
+      disabledSeconds: () => range(1, 60)
+    };
+  }
+  return {
+    disabledHours: () => range(0, 60).splice(20, 4),
+    disabledMinutes: () => range(0, 31),
+    disabledSeconds: () => [55, 56],
+  };
+};
+const disabledDate = (current) => {
+  // Can not select days before today and today
+  return current < moment()
+};
+
+
+const { Option } = Select;
+const children = [];
+for (let i = 0; i < 10; i++) {
+  children.push(<Option key={"Gate" + i}>{"Gate" + i}</Option>);
+}
+const handleChange = (value) => {
+  console.log(`Selected: ${value}`);
+};
+
+
 
 const VisitorPage = () => {
 
@@ -46,25 +88,86 @@ const VisitorPage = () => {
                 wrapperCol={{ xs: { span: 24 }, sm: { span: 14 } }}
                 labelCol={{ xs: { span: 24 }, sm: { span: 6 } }}
               >
-                <Form.Item
+                {/* <Form.Item
                   label="Key Card"
                   name="cid"
-                  // rules={[{
-                  //   required: true,
-                  //   message: 'Please input your verify key card id',
-                  // },]}
-                  >
+                // rules={[{
+                //   required: true,
+                //   message: 'Please input your verify key card id',
+                // },]}
+                >
                   <Input.Group compact>
                     <Input placeholder="" style={{ width: 'calc(100% - 60px)' }} />
                     <Button type="primary" htmlType="submit" >
                       Find
                     </Button>
                   </Input.Group>
+                </Form.Item> */}
+                <Form.Item
+                  name="gate"
+                  label="gate"
+                  rules={[{
+                    type: 'object',
+                    required: true,
+                    message: 'Please select gate',
+                  }]}>
+                  <Select
+                    size="default"
+                    defaultValue=""
+                    onChange={handleChange}
+                    style={{
+                      width: 200,
+                    }}
+                  >
+                    {children}
+                  </Select>
+                </Form.Item>
+                <Form.Item
+                  name="dateStart"
+                  label="Datetime start"
+                  rules={[{
+                    type: 'object',
+                    required: true,
+                    message: 'Please select date start',
+                  }]}>
+                  <RangePicker
+                    disabledDate={disabledDate}
+                    disabledTime={disabledRangeTime}
+                    showTime={{
+                      format: 'HH:mm',
+                    }}
+                    format="YYYY-MM-DD HH:mm"
+                  />
+                </Form.Item>
+
+                <Form.Item label="Contact" style={{ margin: '0px' }}>
+                  <Row>
+                    <Col sm={{ span: 12 }}>
+                      <Form.Item
+                        name="contactFrom"
+                        rules={[{
+                          required: true,
+                          message: 'Please input source',
+                        },]}>
+                        <Input placeholder="source" />
+                      </Form.Item>
+                    </Col>
+                    <Col sm={{ span: 12 }}>
+                      <Form.Item
+                        name="contactTo"
+                        rules={[{
+                          required: true,
+                          message: 'Please input destination',
+                        },]}>
+                        <Input placeholder="destination" />
+                      </Form.Item>
+                    </Col>
+                  </Row>
                 </Form.Item>
               </Form>
             </Card>
 
-            <Card style={{ borderRadius: '1rem', margin: '0.6rem 0' }}>
+            {/* <Card style={{ borderRadius: '1rem', margin: '0.6rem 0' }}>
               <Row justify="center" >
                 <Col md={{ span: 24 }} xl={{ span: 20 }}>
                   <Descriptions title="Key card Info" bordered>
@@ -82,38 +185,14 @@ const VisitorPage = () => {
                   </Row>
                 </Col>
               </Row>
-            </Card>
+            </Card> */}
 
-            <Card style={{ borderRadius: '1rem', margin: '0.6rem 0',padding:'2rem 0' }}>
+            <Card style={{ borderRadius: '1rem', margin: '0.6rem 0', padding: '2rem 0' }}>
               <Form
                 {...formItemLayout}
                 autoComplete="off"
               >
-                <Form.Item label="Contact" style={{ margin: '8px' }}>
-                  <Row>
-                    <Col sm={{ span: 12 }}>
-                      <Form.Item
-                        name="contactFrom"
-                        rules={[{
-                          required: true,
-                          message: 'Please input source',
-                        },]}>
-                        <Input placeholder="source" />
-                      </Form.Item>
-                    </Col>
-                    <Col sm={{ span: 12 }}>
-                      <Form.Item
 
-                        name="contactTo"
-                        rules={[{
-                          required: true,
-                          message: 'Please input destination',
-                        },]}>
-                        <Input placeholder="destination" />
-                      </Form.Item>
-                    </Col>
-                  </Row>
-                </Form.Item>
 
 
                 <Form.Item
@@ -125,7 +204,7 @@ const VisitorPage = () => {
                   },]}>
                   <Input placeholder="ID card code" />
                 </Form.Item>
-                <Form.Item label="Fullname" style={{ margin: '8px' }}>
+                <Form.Item label="Fullname" style={{ margin: '0px' }}>
                   <Row>
                     <Col sm={{ span: 12 }}>
                       <Form.Item
